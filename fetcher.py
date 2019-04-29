@@ -63,6 +63,7 @@ class Fetcher:
         self.d.browser.back()
 
   def getHTMLOfName(self,name):
+    """用browser下载这本书"""
     d = self.get_d()
     d.inputTextAndSearch(name)
     d.waitRequestFinishAndSaveToFile()
