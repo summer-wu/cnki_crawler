@@ -23,6 +23,18 @@ class Cleaner:
     for name,count in name2count.items():
       print(name)
 
+  def onlyBookname(self):
+    booknames = []
+    with open(c_filename) as f:
+      r = csv.reader(f)
+      for row in r:
+        bookName = row[0]
+        if bookName in booknames:continue
+        else:booknames.append(bookName)
+
+    for b in booknames:
+      print(b)
+
 if __name__ == '__main__':
     c = Cleaner()
-    c.do_clean()
+    c.onlyBookname()
